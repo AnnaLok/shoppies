@@ -19,7 +19,7 @@ export default function SearchMovies({ nominationList, addNom, removeNom, disabl
     setLoading(true);
     setError(null);
 
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${query}`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&type=movie&s=${query}`)
     .then(resp => resp)
     .then(resp => resp.json())
     .then(response => {

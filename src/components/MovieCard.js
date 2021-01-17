@@ -33,7 +33,7 @@ export default function MovieCard({ Title, Year, Poster, imdbID, nominationList,
             style={{ width: 200, height: 270 }} />
           }
         >
-          <Meta title={ Title } description={ Year }/>
+          <Meta title={ Title } description={ Year } />
           <Row style={{ marginTop: '10px' }}>
             <Col>
               { nominationList[imdbID] ? 

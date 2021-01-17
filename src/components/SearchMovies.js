@@ -12,7 +12,7 @@ export default function SearchMovies({ nominationList, addNom, removeNom, disabl
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('avengers');
   
   useEffect(() => {
     setData(null);
@@ -43,9 +43,8 @@ export default function SearchMovies({ nominationList, addNom, removeNom, disabl
         { loading && 'LOADING ..' }
         { error !== null && 
           <Alert 
-            message={ error === 'Incorrect IMDb ID.' ? 'Please search a movie by title and nominate up to 5 movies  :)' : error } 
+            message={ error === 'Incorrect IMDb ID.' ? 'No title. Please enter a title.' : error } 
             type='error' 
-            style={{ margin: 20 }}
           />
         }
         { data !== null && data.length > 0 && data.map((movieData, index) => (

@@ -47,10 +47,14 @@ export default function App() {
     <div className='App'>
       <Layout className='layout'>
         <Header>
-          <Button className='right-Header' shape='round' onClick={ showDrawer } > 
+          <div className='logo' />
+          <Button className='center' 
+            type='primary' shape='round' 
+            onClick={ showDrawer } 
+            style={{ float: 'right' }}> 
               View Your Nominations
           </Button>
-          <Title className='vertical-center' level={ 2 } style={{ color: 'white' }}> The Shoppies </Title>
+          <Title className='center' level={ 2 } style={{ color: 'white' }}> The Shoppies </Title>
         </Header>
         <Content style={{ margin: '16px 0', padding: '0 50px' }}>
           <div className='site-layout-content'>
@@ -76,16 +80,22 @@ export default function App() {
 /*
 TODO: 
   General
-  - Deploy to git pages
+  - Change logo + title
+  - Add instructions that you can only nominate 5 movies
   - Do not have inline CSS styling 
-  - reduce num of args passed
-  - add logo to header
   - responsive layout
-  - readme (can do after the deadline?)
   MovieCard
   - Title is cut off (try to wrap it) OR hover to expand title in popup OR make a popup (modal)
+  - reduce num of args passed
+  - (LATER) Nominate/unnominate button doesn't update immediately after removing movie off list. The only time that it works is if 5 are nominated and diableAll is updated
+  ListItem
+  - set left margin of button to 20 
+  - if Title is too long, Meta goes under poster
+  - reduce num of args passed
 
   EXTRA:
   - add modal for more movie details when click on movie 
+  - sort by - search results
+  - carousel
 
 */

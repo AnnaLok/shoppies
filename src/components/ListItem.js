@@ -23,9 +23,9 @@ export default function MovieCard({ Title, Year, Poster, imdbID, removeNom, upda
               src={ Poster === 'N/A' ? no_poster : Poster } 
               style={{ width: 125, height: 170 }} />
               <div>
-              <Col>
-                <Meta title={ Title } description={ Year } style={{ margin: 20 }} />
-                <UnnominateButton unnominateHandler={ unnominateHandler } /> 
+              <Col style={{ margin: 24 , width: 175 }}>
+                <Meta title={ Title } description={ Year } style={{ marginBottom: 24 }} />
+                <UnnominateButton unnominateHandler={ unnominateHandler }/> 
               </Col>
               </div>
           </Row>

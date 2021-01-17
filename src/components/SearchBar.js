@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // antd components
 import { 
   Col,
@@ -8,7 +8,7 @@ import {
 // styling
 import 'antd/dist/antd.css';
 
-export default function SearchBar({searchHandler}) {
+export default function SearchBar({ searchHandler }) {
 
   const { Search } = Input;
 
@@ -16,8 +16,8 @@ export default function SearchBar({searchHandler}) {
 
   return (
     <Row>
-      <Col span={12} offset={6}>
-        <Search placeholder="Enter a movie ..." onSearch={value => searchHandler(value)} enterButton />
+      <Col span={ 12 } offset={ 6 }>
+        <Search placeholder='Enter a movie ...' onSearch={ value => searchHandler(value) } enterButton />
       </Col>
     </Row>
   );

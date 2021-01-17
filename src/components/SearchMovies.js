@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 // antd components
-import { 
-  Alert, 
-  Row 
-} from 'antd';
+import { Alert, Row } from 'antd';
 // core components
 import SearchBar from 'components/SearchBar.js'
-import MovieContainer from 'components/MovieContainer.js'
+import MovieCard from 'components/MovieCard.js'
 
 const API_KEY = '99e81d46';
 
-export default function SearchMovies({nominationList, addNom, removeNom, disableAll, setDisableAll}) {
+export default function SearchMovies({ nominationList, addNom, removeNom, disableAll, setDisableAll }) {
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -33,7 +30,7 @@ export default function SearchMovies({nominationList, addNom, removeNom, disable
       }
       setLoading(false);
     })
-    .catch(({message}) => {
+    .catch(({ message }) => {
       setError(message);
       setLoading(false);
     })
@@ -41,14 +38,25 @@ export default function SearchMovies({nominationList, addNom, removeNom, disable
 
   return (
     <div>
-      <SearchBar searchHandler={setQuery} />
-      <Row gutter={16} type="flex">
-        {loading && "LOADING ..."}
-        {error!==null && 
-          <Alert message={error === 'Incorrect IMDb ID.' ? 'No title. Please enter a title.' : error} type="error" />}
-        {data!==null && data.length > 0 && data.map((movieData, index) => (
-          <MovieContainer {...movieData} nominationList={nominationList} addNom={addNom} removeNom={removeNom} setDisableAll={setDisableAll} disableAll={disableAll}/>
-        ))}
+      <SearchBar searchHandler={ setQuery } />
+      <Row gutter={ 16 } type='flex'>
+        { loading && 'LOADING ..' }
+        { error !== null && 
+          <Alert 
+            message={ error === 'Incorrect IMDb ID.' ? 'No title. Please enter a title.' : error } 
+            type='error' 
+          />
+        }
+        { data !== null && data.length > 0 && data.map((movieData, index) => (
+          <MovieCard 
+            { ...movieData } 
+            nominationList={ nominationList } 
+            addNom={ addNom } 
+            removeNom={ removeNom }
+            setDisableAll={ setDisableAll } 
+            disableAll={ disableAll }
+          />))
+        }
       </Row>
     </div>
   );

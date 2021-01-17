@@ -72,20 +72,3 @@ export default function App() {
     </div>
   );
 }
-
-/*
-TODO: 
-  General
-  - Deploy to git pages
-  - Do not have inline CSS styling 
-  - reduce num of args passed
-  - add logo to header
-  - responsive layout
-  - readme (can do after the deadline?)
-  MovieCard
-  - Title is cut off (try to wrap it) OR hover to expand title in popup OR make a popup (modal)
-
-  EXTRA:
-  - add modal for more movie details when click on movie 
-
-*/
